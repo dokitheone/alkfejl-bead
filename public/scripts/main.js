@@ -14,19 +14,19 @@ const heading = el.closest('ul').siblings('.panel-heading')
 console.log(heading.text())
 */
 
-const $recipes = $('li.list-group-item')
-$recipes.each(function (i, el) {
+const $cards = $('li.list-group-item')
+$cards.each(function (i, el) {
     const $el = $(el); 
     if ($el.text().trim().length < 5) {
         $el.css('border', '1px solid red')
     }
 })
 
-const $list = $('<ul />')
+/*const $list = $('<ul />')
 $('.panel-heading').each((i, el) => {
     $('<li />')
         .html($(el).text().trim())
         .appendTo($list)
 })
-$('body').append($list)
+$('body').append($list)*/
 

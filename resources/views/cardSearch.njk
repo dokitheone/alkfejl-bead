@@ -1,0 +1,86 @@
+{% extends 'layout' %}
+
+{% block title %}Névjegyek böngészése{% endblock %}
+{% block content %}
+  <h1>Névjegyek böngészése</h1>
+  <form action="/cards" method="GET">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCardName">Név</label>
+          <input type="text" class="form-control" placeholder="--" id="inputCardName" name="cardName" value="{{ filters.cardName }}">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCategory">Kategória</label>
+          <select class="form-control" id="inputCategory" name="category">
+            <option value="">--</option>
+            {% for category in categories %}
+            {% if filters.category == category.id %}
+            <option value="{{ category.id }}" selected>{{ category.name }}</option>
+            {% else %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCreatedBy">Beküldte</label>
+          <select class="form-control" id="inputCreatedBy" name="createdBy">
+            <option value="">--</option>
+            {% for user in users %}
+            {% if filters.createdBy == user.id %}
+            <option value="{{ user.id }}" selected>{{ user.username }}</option>
+            {% else %}
+            <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>&nbsp;</label>
+          <button class="btn btn-block btn-primary" type="submit">Szűrés</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <h2>Találatok ({{ cards.total }})</h2>
+  {% for cardBatch in cards.data | batch(3) %}
+  <div class="row">
+    {% for card in cardBatch %}
+    <div class="col-md-4">
+      <a class="result-item" href="/cards/{{ card.id }}">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <strong>{{ card.name }}</strong><br>
+            beküldte <em>{{ card.user.username }}</em>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  Nincs a szűrésnek megfelelő névjegy.
+  {% endfor %}
+  {% if cards.lastPage > 1 %}
+  <div class="text-center">
+    <ul class="pagination">
+      {% for page in range(1, cards.lastPage + 1) %}
+      {% if page == cards.currentPage %}
+      <li class="active">
+        <a href="/cards?p={{ page }}&amp;cardName={{ filters.cardName }}&amp;category={{ filters.category }}&amp;createdBy={{ filters.createdBy }}">{{ page }}</a>
+      </li>
+      {% else %}
+      <li><a href="/cards?p={{ page }}&amp;cardName={{ filters.cardName }}&amp;category={{ filters.category }}&amp;createdBy={{ filters.createdBy }}">{{ page }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+{% endblock %}

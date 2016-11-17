@@ -1,0 +1,28 @@
+{% extends "layout" %}
+
+{% block content %}
+<!--<h2>{{ card.name }}</h2>
+<p>{{ card.category.name }}</p>-->
+<h3>Név</h3>
+<pre>
+{{ card.name }}
+</pre>
+<h3>Telefonszám</h3>
+<pre>
+{{ card.cell }}
+</pre>
+<h3>Email</h3>
+<pre>
+{{ card.email }}
+</pre>
+
+{% if (card.user_id == currentUser.id) %}
+<a href="/cards/{{ card.id }}/edit" class="btn btn-default">
+    Szerkeszt
+</a>
+<a href="/cards/{{ card.id }}/delete" class="btn btn-danger">
+    Töröl
+</a>
+{% endif %}
+
+{% endblock %}

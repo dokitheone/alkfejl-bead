@@ -10,19 +10,15 @@
 <h1>Névjegyek kezelése</h1>
 
 <div class="row">
-  <div class="col-lg-4 col-md-6 col-sm-12">
-    <p>Az oldal használatba vételéhez kérlek jelentkezz be!</p>
-  </div>
-<!--
   {% for category in categories %}
   <div class="col-lg-4 col-md-6 col-sm-12">
     <div class="panel panel-primary">
       <div class="panel-heading">{{ category.name }}</div>
       <ul class="list-group">
-        {% for recipe in category.topRecipes %}
+        {% for card in category.topCards %}
         <li class="list-group-item">
-          <a href="/recipes/{{ recipe.id }}">
-            {{ recipe.name }}
+          <a href="/cards/{{ card.id }}">
+            {{ card.name }}
           </a>
         </li>
         {% endfor %}
@@ -30,6 +26,5 @@
     </div>
   </div>
   {% endfor %}
--->
 </div>
 {% endblock %}

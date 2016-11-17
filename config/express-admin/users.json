@@ -1,8 +1,8 @@
 {
-    "a": {
-        "name": "a",
+    "admin": {
+        "name": "admin",
         "admin": true,
-        "salt": "dmKz+8XqwJijtWlv/Ipm6UglhRwtE5j5RYqFF0YVXMtzGCl29HdeJknhT0aB+UBf0bEKdB6AOEB31yCDPEqWRru2TaJ0BWU2pgyGNhCkmQpof8s+qe341K6/TViLuvdj06IePl2jE9NoAO/NIZ8aD1JTtmTVZ/gLBk/ZgIOKxes=",
-        "hash": "klTAxJoNKWNOMXQua4VkImnu+ykN1w8EsLoSAu9sHQ3SYwmgSFDrxtgdzK8TuaoxJmJOF55T4CfYB7zWDvPgx8gtHWlQ/aX00IPgkmOBZNpR6xbtVBIEIa9VvR7iuNL1ITZbLwa3BL8Waa5rxPkqH4kb6TjKtKPFf5xw2FFSyik="
+        "salt": "3F4Eb4cD5KmOhVGUK77fVUiwAJgN08u6ZhuXn91XpTmsobGBJ1JmrCOuGY+wcAPWQY3w5gCmTFcpCi9uXTVUk5b7BjTe+bgGc3EMj6mvSbuuZ5Y79ZlXnlI31B3xu1FwBCNxPP8argWovsiTa+A+g+agBVE/oAxyunV01hTAOjE=",
+        "hash": "4IDUeIISFx+iDjxRuS0PJdouaDAFruNX+9b6lfoVLjAYBIa/VDIRcw1q/oD+wvmjSvYvUmUYxLH+XK/wVocIp6ySKSw2txI3UKdydxqCwzHCiBoV4WAOcrbMGSj3oyD2nBmVLolKGZCZY2yAX0JpT+KWPzyBe0yuMB51u2m82pI="
     }
-}   
+}
