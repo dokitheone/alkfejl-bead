@@ -31,7 +31,7 @@ class UserController {
       const login = yield request.auth.attempt(email, password) 
 
       if (login) {
-        response.redirect('/main2')
+        response.redirect('/')
         return
       }
     } 
