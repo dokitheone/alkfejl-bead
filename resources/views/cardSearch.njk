@@ -5,13 +5,13 @@
   <h1>Névjegyek böngészése</h1>
   <form action="/cards" method="GET">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group">
           <label for="inputCardName">Név</label>
           <input type="text" class="form-control" placeholder="--" id="inputCardName" name="cardName" value="{{ filters.cardName }}">
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group">
           <label for="inputCategory">Kategória</label>
           <select class="form-control" id="inputCategory" name="category">
@@ -26,7 +26,7 @@
           </select>
         </div>
       </div>
-      <div class="col-md-3">
+      <!--<div class="col-md-3"> 
         <div class="form-group">
           <label for="inputCreatedBy">Beküldte</label>
           <select class="form-control" id="inputCreatedBy" name="createdBy">
@@ -40,8 +40,8 @@
             {% endfor %}
           </select>
         </div>
-      </div>
-      <div class="col-md-3">
+      </div>-->
+      <div class="col-md-4">
         <div class="form-group">
           <label>&nbsp;</label>
           <button class="btn btn-block btn-primary" type="submit">Szűrés</button>
@@ -49,20 +49,22 @@
       </div>
     </div>
   </form>
-  <h2>Találatok ({{ cards.total }})</h2>
+  <h2>Találatok<!-- ({{ cards.total }})--></h2>
   {% for cardBatch in cards.data | batch(3) %}
   <div class="row">
     {% for card in cardBatch %}
-    <div class="col-md-4">
-      <a class="result-item" href="/cards/{{ card.id }}">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <strong>{{ card.name }}</strong><br>
-            beküldte <em>{{ card.user.username }}</em>
-          </div>
+      {% if (card.user_id == currentUser.id) %}
+        <div class="col-md-4">      
+          <a class="result-item" href="/cards/{{ card.id }}">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <strong>{{ card.name }}</strong><br>
+                beküldte <em>{{ card.user.username }}</em>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
+      {% endif %}
     {% endfor %}
   </div>
   {% else %}

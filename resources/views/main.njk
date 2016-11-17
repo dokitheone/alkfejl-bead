@@ -16,11 +16,13 @@
       <div class="panel-heading">{{ category.name }}</div>
       <ul class="list-group">
         {% for card in category.topCards %}
-        <li class="list-group-item">
-          <a href="/cards/{{ card.id }}">
-            {{ card.name }}
-          </a>
-        </li>
+          {% if (card.user_id == currentUser.id) %}
+            <li class="list-group-item">
+              <a href="/cards/{{ card.id }}">
+                {{ card.name }}
+              </a>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </div>

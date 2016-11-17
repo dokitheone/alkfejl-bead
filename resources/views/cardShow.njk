@@ -3,6 +3,7 @@
 {% block content %}
 <!--<h2>{{ card.name }}</h2>
 <p>{{ card.category.name }}</p>-->
+
 <h3>Név</h3>
 <pre>
 {{ card.name }}
@@ -15,8 +16,12 @@
 <pre>
 {{ card.email }}
 </pre>
+<h3>Kategória</h3>
+<pre>
+{{ card.category.name }}
+</pre>
 
-{% if (card.user_id == currentUser.id) %}
+{% if (card.user_id == currentUser.id) %} 
 <a href="/cards/{{ card.id }}/edit" class="btn btn-default">
     Szerkeszt
 </a>

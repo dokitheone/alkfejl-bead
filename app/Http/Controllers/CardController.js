@@ -11,7 +11,7 @@ class CardController {
         const categories = yield Category.all()
 
         for(let category of categories) {
-            const cards = yield category.cards().limit(3).fetch();
+            const cards = yield category.cards()/*.limit(3)*/.fetch();
             category.topCards = cards.toJSON();
         }
 
