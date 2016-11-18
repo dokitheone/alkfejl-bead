@@ -83,21 +83,53 @@
             "readonly": false
         }
     },
-    "sqlite_sequence": {
-        "slug": "sqlite_sequence",
+    "categories": {
+        "slug": "categories",
         "table": {
-            "name": "sqlite_sequence",
-            "pk": "",
-            "verbose": "sqlite_sequence"
+            "name": "categories",
+            "pk": "id",
+            "verbose": "categories"
         },
         "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "integer",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
             {
                 "name": "name",
                 "verbose": "name",
                 "control": {
                     "text": true
                 },
-                "type": "",
+                "type": "varchar(20)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "created_at",
+                "verbose": "created_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -108,12 +140,12 @@
                 }
             },
             {
-                "name": "seq",
-                "verbose": "seq",
+                "name": "updated_at",
+                "verbose": "updated_at",
                 "control": {
                     "text": true
                 },
-                "type": "",
+                "type": "datetime",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -135,12 +167,12 @@
             "readonly": false
         }
     },
-    "recipes": {
-        "slug": "recipes",
+    "cards": {
+        "slug": "cards",
         "table": {
-            "name": "recipes",
+            "name": "cards",
             "pk": "id",
-            "verbose": "recipes"
+            "verbose": "cards"
         },
         "columns": [
             {
@@ -176,12 +208,12 @@
                 }
             },
             {
-                "name": "ingredients",
-                "verbose": "ingredients",
+                "name": "cell",
+                "verbose": "cell",
                 "control": {
                     "text": true
                 },
-                "type": "text",
+                "type": "varchar(255)",
                 "allowNull": false,
                 "defaultValue": null,
                 "listview": {
@@ -192,12 +224,12 @@
                 }
             },
             {
-                "name": "instructions",
-                "verbose": "instructions",
+                "name": "email",
+                "verbose": "email",
                 "control": {
                     "text": true
                 },
-                "type": "text",
+                "type": "varchar(255)",
                 "allowNull": false,
                 "defaultValue": null,
                 "listview": {
@@ -230,6 +262,154 @@
                     "text": true
                 },
                 "type": "integer",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "created_at",
+                "verbose": "created_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "updated_at",
+                "verbose": "updated_at",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "users": {
+        "slug": "users",
+        "table": {
+            "name": "users",
+            "pk": "id",
+            "verbose": "users"
+        },
+        "columns": [
+            {
+                "name": "id",
+                "verbose": "id",
+                "control": {
+                    "text": true
+                },
+                "type": "integer",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "username",
+                "verbose": "username",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(80)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "email",
+                "verbose": "email",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(254)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "password",
+                "verbose": "password",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(60)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "firstname",
+                "verbose": "firstname",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "lastname",
+                "verbose": "lastname",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -431,53 +611,21 @@
             "readonly": false
         }
     },
-    "categories": {
-        "slug": "categories",
+    "sqlite_sequence": {
+        "slug": "sqlite_sequence",
         "table": {
-            "name": "categories",
-            "pk": "id",
-            "verbose": "categories"
+            "name": "sqlite_sequence",
+            "pk": "",
+            "verbose": "sqlite_sequence"
         },
         "columns": [
-            {
-                "name": "id",
-                "verbose": "id",
-                "control": {
-                    "text": true
-                },
-                "type": "integer",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
             {
                 "name": "name",
                 "verbose": "name",
                 "control": {
                     "text": true
                 },
-                "type": "varchar(20)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "created_at",
-                "verbose": "created_at",
-                "control": {
-                    "text": true
-                },
-                "type": "datetime",
+                "type": "",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -488,308 +636,12 @@
                 }
             },
             {
-                "name": "updated_at",
-                "verbose": "updated_at",
+                "name": "seq",
+                "verbose": "seq",
                 "control": {
                     "text": true
                 },
-                "type": "datetime",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            }
-        ],
-        "mainview": {
-            "show": true
-        },
-        "listview": {
-            "order": {},
-            "page": 25
-        },
-        "editview": {
-            "readonly": false
-        }
-    },
-    "users": {
-        "slug": "users",
-        "table": {
-            "name": "users",
-            "pk": "id",
-            "verbose": "users"
-        },
-        "columns": [
-            {
-                "name": "id",
-                "verbose": "id",
-                "control": {
-                    "text": true
-                },
-                "type": "integer",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "username",
-                "verbose": "username",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(80)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "email",
-                "verbose": "email",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(254)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "password",
-                "verbose": "password",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(60)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "firstname",
-                "verbose": "firstname",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(255)",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "lastname",
-                "verbose": "lastname",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(255)",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "created_at",
-                "verbose": "created_at",
-                "control": {
-                    "text": true
-                },
-                "type": "datetime",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "updated_at",
-                "verbose": "updated_at",
-                "control": {
-                    "text": true
-                },
-                "type": "datetime",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            }
-        ],
-        "mainview": {
-            "show": true
-        },
-        "listview": {
-            "order": {},
-            "page": 25
-        },
-        "editview": {
-            "readonly": false
-        }
-    },
-    "cards": {
-        "slug": "cards",
-        "table": {
-            "name": "cards",
-            "pk": "id",
-            "verbose": "cards"
-        },
-        "columns": [
-            {
-                "name": "id",
-                "verbose": "id",
-                "control": {
-                    "text": true
-                },
-                "type": "integer",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "name",
-                "verbose": "name",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(255)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "cell",
-                "verbose": "cell",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(255)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "email",
-                "verbose": "email",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(255)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "user_id",
-                "verbose": "user_id",
-                "control": {
-                    "text": true
-                },
-                "type": "integer",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "category_id",
-                "verbose": "category_id",
-                "control": {
-                    "text": true
-                },
-                "type": "integer",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "created_at",
-                "verbose": "created_at",
-                "control": {
-                    "text": true
-                },
-                "type": "datetime",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "updated_at",
-                "verbose": "updated_at",
-                "control": {
-                    "text": true
-                },
-                "type": "datetime",
+                "type": "",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {

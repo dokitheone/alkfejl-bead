@@ -1,6 +1,6 @@
 {
     "sqlite": {
-        "database": "database/recipes.sqlite"
+        "database": "database/cards.sqlite"
     },
     "server": {
         "port": 4444
