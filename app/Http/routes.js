@@ -7,6 +7,7 @@ const Route = use('Route')
 // })
 // Route.on('/').render('main')
 //Route.get('/', 'RecipeController.index')
+
 Route.get('/', 'CardController.index')
 //Route.get('/main', 'CardController.main').middleware('auth')
 Route.get('/cards/create', 'CardController.create').middleware('auth')
