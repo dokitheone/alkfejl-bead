@@ -93,3 +93,60 @@ Példa egy egyszerű folyamatra:
 #####2.2. Felhasználói-felület modell
 
 ######2.2.1.Oldalvázlatok:
+
+**Főoldal**
+![](docs/images/terv/fooldal.jpg)
+
+**Bejelentkező oldal**
+![](docs/images/terv/belepes.jpg)
+
+**Regisztrációs oldal**
+![](docs/images/terv/regisztracio.jpg)
+
+**Bejelentkezett oldal**
+![](docs/images/terv/bejelentkezett.jpg)
+
+**Névjegyek megtekintése**
+![](docs/images/terv/nevjegymegtekint.jpg)
+
+**Új névjegy létrehozása**
+![](docs/images/terv/ujnevjegy.jpg)
+
+**Névjegy megtekint**
+![](docs/images/terv/nevjegyshow.jpg)
+
+**Névjegy szerkesztése**
+![](docs/images/terv/nevjegyszerk.jpg)
+
+######2.2.2.Designtervek (végső megvalósítás kinézete):
+
+**Főoldal**
+![](docs/images/design/fooldal.png)
+
+**Bejelentkező oldal**
+![](docs/images/design/belepes.png)
+
+**Regisztrációs oldal**
+![](docs/images/design/regiszt.png)
+
+**Bejelentkezett oldal**
+![](docs/images/design/bejelentkezett.png)
+
+**Névjegyek megtekintése**
+![](docs/images/design/nevjegymegtekint.png)
+
+**Új névjegy létrehozása**
+![](docs/images/design/ujnevjegy.png)
+
+**Névjegy megtekint**
+![](docs/images/design/nevjegyshow.png)
+
+**Névjegy szerkesztése**
+![](docs/images/design/nevjegyszerk.png)
+
+######2.2.3. Osztálymodell
+ 
+ **Adatmodell**
+ 
+ ![](docs/images/adatmodell.png)
+ 
