@@ -94,7 +94,7 @@ Példa egy egyszerű folyamatra:
 
 ######2.2.1.Oldalvázlatok:
 
-**Főoldal**
+**Főoldal**                                              
 ![](docs/images/terv/fooldal.jpg)
 
 **Bejelentkező oldal**
@@ -117,7 +117,7 @@ Példa egy egyszerű folyamatra:
 
 ######2.2.2.Designtervek (végső megvalósítás kinézete):
 
-**Főoldal**
+**Főoldal**                                                 
 ![](docs/images/design/fooldal.png)
 
 **Bejelentkező oldal**
