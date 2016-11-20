@@ -139,5 +139,6 @@ Példa egy egyszerű folyamatra:
  
  **Adatmodell**
  
+  
  ![](docs/images/adatmodell.png)
  
