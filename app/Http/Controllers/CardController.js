@@ -51,15 +51,13 @@ class CardController {
 
         cardData.user_id = request.currentUser.id
         const card = yield Card.create(cardData)
-        // response.send(recipe.toJSON())
-        response.redirect('/')
+        response.redirect('/cards')
     }
 
     * show (request, response) {
         const id = request.param('id');
         const card = yield Card.find(id);
         yield card.related('category').load();
-        // response.send(recipe.toJSON())
 
         yield response.sendView('cardShow', {
             card: card.toJSON()
@@ -70,7 +68,6 @@ class CardController {
         const categories = yield Category.all()
         const id = request.param('id');
         const card = yield Card.find(id);
-        // console.log(recipe.toJSON())
 
         if (request.currentUser.id !== card.user_id) {
             response.unauthorized('Engedély megtagadva.')
@@ -106,8 +103,6 @@ class CardController {
 
         const id = request.param('id');
         const card = yield Card.find(id);
-
-        // Object.assign(recipe, recipeData)
         
         card.name = cardData.name;
         card.cell = cardData.cell; 
@@ -116,7 +111,7 @@ class CardController {
 
         yield card.save()
         
-        response.redirect('/')
+        response.redirect('/cards')
     }
 
     * doDelete (request, response) {
@@ -129,7 +124,7 @@ class CardController {
         }
 
         yield card.delete()
-        response.redirect('/')
+        response.redirect('/cards')
     }
 
     * search (request, response) {

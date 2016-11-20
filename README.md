@@ -103,9 +103,6 @@ Példa egy egyszerű folyamatra:
 **Regisztrációs oldal**
 ![](docs/images/terv/regisztracio.jpg)
 
-**Bejelentkezett oldal**
-![](docs/images/terv/bejelentkezett.jpg)
-
 **Névjegyek megtekintése**
 ![](docs/images/terv/nevjegymegtekint.jpg)
 
@@ -128,12 +125,6 @@ Példa egy egyszerű folyamatra:
 
 **Regisztrációs oldal**
 ![](docs/images/design/regiszt.png)
-
-**Bejelentkezett oldal**
-![](docs/images/design/bejelentkezett.png)
-
-**Névjegyek megtekintése**
-![](docs/images/design/nevjegymegtekint.png)
 
 **Új névjegy létrehozása**
 ![](docs/images/design/ujnevjegy.png)

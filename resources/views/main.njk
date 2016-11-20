@@ -6,48 +6,23 @@
 
 {% block content %}
 
-<!--<h1>{{ name }}</h1>-->
 {% if currentUser %}
-  <h1>Névjegyek</h1>
-
-  <div class="row">
-    {% for category in categories %}
-    <div class="col-lg-12">
-      <div class="panel panel-primary">
-        <div class="panel-heading">{{ category.name }}</div>
-        <div class="panel-body">
-          {% for card in category.topCards %}
-            {% if (card.user_id == currentUser.id) %}
-              <!--<li class="list-group-item">-->
-                <a href="/cards/{{ card.id }}">
-                  {{ card.name }}
-                </a>
-              <!--</li>-->
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+  <h1>Sikeres bejelentkezés!</h1>
+  <br>
+  <p style="font-size:20px">Mostmár megkezdheted az oldal használatát. </p> 
+  <img src="http://i.imgur.com/OMCGMup.png" style="width:10%;height:10%;">
 {% else %}  
   <div class="row">
     
     <div class="col-lg-12">
       <h1>Üdvözöllek az oldalon!</h1>
-
       <br>
-
       <p style="font-size:20px">Miért minket válassz?</p>
       <p style="font-size:18px">Nálunk a névjegyeidet egy helyen tudod kezelni amíg mi a legnagyobb egyszerűségre és kezelhetőségre törekszünk!</p>
       <p style="font-size:14px"><strong>Próbáld ki most!</strong></p>      
       <p style="font-size:14px">Az oldal használatba vételéhez kérlek <a href="/login">jelentkezz be</a>!</p>
       <p style="font-size:14px">Ha még nincs saját profilod <a href="/register">itt regisztrálhatsz</a>!</p>
-    </div>
-    <!--<div class="col-md-3">
-      <img src="http://www.clipartkid.com/images/126/cute-tweet-birds-clip-art-free-clipart-graphics-revidevi-wordpress-HRhBCT-clipart.png" alt="Twitter Bird" style="width:50%;height:50%;">
-    </div>-->
-    
+    </div>    
   </div>
 
 {% endif %}
