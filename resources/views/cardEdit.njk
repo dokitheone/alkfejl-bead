@@ -1,5 +1,10 @@
 {% extends "layout" %}
 
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+<script src="/scripts/edit.js"></script>
+{% endblock %}
+
 {% block content %}
 <h2>Névjegy módosítása</h2>
 
@@ -19,7 +24,7 @@
 {% endif %}
 
 
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post" data-toggle="validator">
 
   {{ csrfField }}
 
@@ -29,19 +34,23 @@
       <input type="text" class="form-control" id="name" name="name" value="{{ card.name }}">
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label for="cell" class="col-lg-2 control-label">Telefonszám</label>
     <div class="col-lg-10">
-      <input type="text" class="form-control" rows="3" id="cell" name="cell" value="{{ card.cell }}">
+      <input type="tel" pattern="[0-9]{11}" class="form-control" rows="3" id="cell" name="cell" value="{{ card.cell }}"> 
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors">Példa: 06302548192</div>     
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label for="email" class="col-lg-2 control-label">Email</label>
     <div class="col-lg-10">
-      <input type="text" class="form-control" rows="3" id="email" name="email" value="{{ card.email }}">
+      <input type="email" class="form-control" rows="3" id="email" name="email" value="{{ card.email }}">
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors">Példa: macska@jancsi.hu</div>
     </div> 
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label for="category_id" class="col-lg-2 control-label">Kategória</label>
     <div class="col-lg-10">
       <select class="form-control" id="category_id" name="category_id">
@@ -53,6 +62,8 @@
         >{{ category.name }}</option>
         {% endfor %}
       </select>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </div>
   </div>
   <div class="form-group">
