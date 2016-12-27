@@ -1,5 +1,9 @@
 {% extends "layout" %}
 
+{% block scripts %}
+<script src="/scripts/pop_del.js"></script>
+{% endblock %}
+
 {% block content %}
 <!--<h2>{{ card.name }}</h2>-->
 <h2>Névjegy adatai</h2>
@@ -21,12 +25,32 @@
 </pre>
 
 {% if (card.user_id == currentUser.id) %} 
+
+{{ csrfField | safe }}
+
 <a href="/cards/{{ card.id }}/edit" class="btn btn-default">
     Szerkeszt
 </a>
-<a href="/cards/{{ card.id }}/delete" class="btn btn-danger">
+<a id="btnDelete" href="/cards/{{ card.id }}/delete" class="btn btn-danger">
     Töröl
 </a>
+
+<span class="help-block"></span>
+
+<div class="modal fade confirm-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            Valóban törölni kívánja a névjegyet?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">Igen</button>
+            <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">Nem</button>
+        </div>
+        </div>
+    </div>
+</div>
+
 {% endif %}
 
 {% endblock %}

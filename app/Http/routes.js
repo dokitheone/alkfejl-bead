@@ -17,7 +17,8 @@ Route.post('/register', 'UserController.doRegister')
 Route.post('/login', 'UserController.doLogin')
 Route.get('/logout', 'UserController.doLogout')
 
-Route.group('ajax', function () {  
-  Route.post('/login', 'UserController.ajaxLogin')
-  Route.post('/register', 'UserController.ajaxRegister')
+Route.group('ajax', function () {
+    Route.delete('/cards/:id/delete', 'CardController.ajaxDelete').middleware('auth')
+    Route.post('/login', 'UserController.ajaxLogin')
+    Route.post('/register', 'UserController.ajaxRegister')  
 }).prefix('/ajax')

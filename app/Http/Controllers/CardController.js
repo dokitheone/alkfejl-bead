@@ -10,7 +10,7 @@ class CardController {
     * index(request, response) {
         const categories = yield Category.all()
 
-        for(let category of categories) {
+        for (let category of categories) {
             const cards = yield category.cards()/*.limit(3)*/.fetch();
             category.topCards = cards.toJSON();
         }
@@ -18,17 +18,17 @@ class CardController {
         yield response.sendView('main', {
             name: 'Viktor',
             categories: categories.toJSON()
-        })  
+        })
     }
 
-    * create (request, response) {
+    * create(request, response) {
         const categories = yield Category.all()
         yield response.sendView('cardCreate', {
             categories: categories.toJSON()
         });
     }
 
-    * doCreate (request, response) {
+    * doCreate(request, response) {
         const cardData = request.except('_csrf');
 
         const rules = {
@@ -43,7 +43,7 @@ class CardController {
         if (validation.fails()) {
             yield request
                 .withAll()
-                .andWith({errors: validation.messages()})
+                .andWith({ errors: validation.messages() })
                 .flash()
             response.redirect('back')
             return
@@ -54,7 +54,7 @@ class CardController {
         response.redirect('/cards')
     }
 
-    * show (request, response) {
+    * show(request, response) {
         const id = request.param('id');
         const card = yield Card.find(id);
         yield card.related('category').load();
@@ -64,7 +64,7 @@ class CardController {
         })
     }
 
-    * edit (request, response) {
+    * edit(request, response) {
         const categories = yield Category.all()
         const id = request.param('id');
         const card = yield Card.find(id);
@@ -80,7 +80,7 @@ class CardController {
         });
     }
 
-    * doEdit (request, response) {
+    * doEdit(request, response) {
         const cardData = request.except('_csrf');
 
         const rules = {
@@ -95,7 +95,7 @@ class CardController {
         if (validation.fails()) {
             yield request
                 .withAll()
-                .andWith({errors: validation.messages()})
+                .andWith({ errors: validation.messages() })
                 .flash()
             response.redirect('back')
             return
@@ -103,18 +103,18 @@ class CardController {
 
         const id = request.param('id');
         const card = yield Card.find(id);
-        
+
         card.name = cardData.name;
-        card.cell = cardData.cell; 
+        card.cell = cardData.cell;
         card.email = cardData.email;
         card.category_id = cardData.category_id;
 
         yield card.save()
-        
+
         response.redirect('/cards')
     }
 
-    * doDelete (request, response) {
+    * doDelete(request, response) {
         const id = request.param('id');
         const card = yield Card.find(id);
 
@@ -127,7 +127,7 @@ class CardController {
         response.redirect('/cards')
     }
 
-    * search (request, response) {
+    * search(request, response) {
         const page = Math.max(1, request.input('p'))
         const filters = {
             cardName: request.input('cardName') || '',
@@ -153,6 +153,27 @@ class CardController {
             users: users.toJSON(),
             filters
         })
+    }
+
+    * ajaxDelete(request, response) {
+        const id = request.param('id');
+        const card = yield Card.find(id);
+
+        if (card) {
+            if (request.currentUser.id !== card.user_id) {
+                response.unauthorized('Access denied.')
+                return
+            }
+            yield card.delete()
+            response.ok({
+                success: true
+            })
+            return
+        } else {
+            response.notFound('No card')
+        }
+
+        
     }
 }
 
