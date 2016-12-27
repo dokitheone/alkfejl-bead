@@ -1,5 +1,9 @@
 {% extends "layout" %}
 
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+{% endblock %}
+
 {% block content %}
 <h2>Új névjegy</h2>
 
@@ -19,29 +23,35 @@
 {% endif %}
 
 
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post" data-toggle="validator">
 
   {{ csrfField }}
 
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label for="name" class="col-lg-2 control-label">Név</label>
     <div class="col-lg-10">
-      <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+      <input required type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label for="cell" class="col-lg-2 control-label">Telefonszám</label>
     <div class="col-lg-10">
-      <input type="text" class="form-control" rows="3" id="cell" name="cell" value="{{old('cell')}}">
+      <input required type="number" class="form-control" rows="3" id="cell" name="cell" value="{{old('cell')}}">
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label for="email" class="col-lg-2 control-label">Email</label>
     <div class="col-lg-10">
-      <input type="text" class="form-control" rows="3" id="email" name="email" value="{{old('email')}}">
+      <input required type="email" class="form-control" rows="3" id="email" name="email" value="{{old('email')}}">
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback">
     <label for="category_id" class="col-lg-2 control-label">Kategória</label>
     <div class="col-lg-10">
       <select class="form-control" id="category_id" name="category_id">
@@ -53,6 +63,8 @@
         >{{ category.name }}</option>
         {% endfor %}
       </select>
+      <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+      <div class="help-block with-errors"></div>
     </div>
   </div>
   <div class="form-group">
