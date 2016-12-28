@@ -231,6 +231,31 @@ GitHub, Visual Studio Code
 
 #####5.2.	Telepítés lépései
 
+1. Kód letöltése
+
+    a. ZIP letöltése
+
+    b. dokitheone/alkfejl-bead klónozása
+
+    c. dokitheone/alkfejl-bead forkolása és a saját repo klónozása
+
+2. `git config --global url."https://".insteadOf git://` (szükségszerűen)
+3. `npm install`
+4. `.env.example` fájl átnevezése `.env`-re
+5. `npm run dev` paranccsal futtatni
+6. `localhost:3333` megnyitása
+
+###### Express-admin adatbázis-kliens futtatása
+
+1. `node_modules\.bin\admin config/express-admin`
+2. Első futtatáskor a paraméterek beállítása
+
+    a. `sqlite` adatbázis
+
+    b. 4444-es port pl.
+
+    c. username és password beállítása
+
 #####5.3.	A program használata
 
 1. Böngészőben nyissuk meg a főoldalt
