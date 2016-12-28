@@ -283,12 +283,12 @@
             "readonly": false
         }
     },
-    "users": {
-        "slug": "users",
+    "tokens": {
+        "slug": "tokens",
         "table": {
-            "name": "users",
+            "name": "tokens",
             "pk": "id",
-            "verbose": "users"
+            "verbose": "tokens"
         },
         "columns": [
             {
@@ -308,60 +308,12 @@
                 }
             },
             {
-                "name": "username",
-                "verbose": "username",
+                "name": "user_id",
+                "verbose": "user_id",
                 "control": {
                     "text": true
                 },
-                "type": "varchar(80)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "email",
-                "verbose": "email",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(254)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "password",
-                "verbose": "password",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(60)",
-                "allowNull": false,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "firstname",
-                "verbose": "firstname",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(255)",
+                "type": "integer",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -372,12 +324,60 @@
                 }
             },
             {
-                "name": "lastname",
-                "verbose": "lastname",
+                "name": "token",
+                "verbose": "token",
                 "control": {
                     "text": true
                 },
-                "type": "varchar(255)",
+                "type": "varchar(40)",
+                "allowNull": false,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "forever",
+                "verbose": "forever",
+                "control": {
+                    "text": true
+                },
+                "type": "boolean",
+                "allowNull": true,
+                "defaultValue": "'0'",
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "is_revoked",
+                "verbose": "is_revoked",
+                "control": {
+                    "text": true
+                },
+                "type": "boolean",
+                "allowNull": true,
+                "defaultValue": "'0'",
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "expiry",
+                "verbose": "expiry",
+                "control": {
+                    "text": true
+                },
+                "type": "datetime",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -515,12 +515,12 @@
             "readonly": false
         }
     },
-    "tokens": {
-        "slug": "tokens",
+    "users": {
+        "slug": "users",
         "table": {
-            "name": "tokens",
+            "name": "users",
             "pk": "id",
-            "verbose": "tokens"
+            "verbose": "users"
         },
         "columns": [
             {
@@ -540,28 +540,12 @@
                 }
             },
             {
-                "name": "user_id",
-                "verbose": "user_id",
+                "name": "username",
+                "verbose": "username",
                 "control": {
                     "text": true
                 },
-                "type": "integer",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "token",
-                "verbose": "token",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(40)",
+                "type": "varchar(80)",
                 "allowNull": false,
                 "defaultValue": null,
                 "listview": {
@@ -572,14 +556,14 @@
                 }
             },
             {
-                "name": "forever",
-                "verbose": "forever",
+                "name": "email",
+                "verbose": "email",
                 "control": {
                     "text": true
                 },
-                "type": "boolean",
-                "allowNull": true,
-                "defaultValue": "'0'",
+                "type": "varchar(254)",
+                "allowNull": false,
+                "defaultValue": null,
                 "listview": {
                     "show": true
                 },
@@ -588,14 +572,14 @@
                 }
             },
             {
-                "name": "is_revoked",
-                "verbose": "is_revoked",
+                "name": "password",
+                "verbose": "password",
                 "control": {
                     "text": true
                 },
-                "type": "boolean",
-                "allowNull": true,
-                "defaultValue": "'0'",
+                "type": "varchar(60)",
+                "allowNull": false,
+                "defaultValue": null,
                 "listview": {
                     "show": true
                 },
@@ -604,12 +588,28 @@
                 }
             },
             {
-                "name": "expiry",
-                "verbose": "expiry",
+                "name": "firstname",
+                "verbose": "firstname",
                 "control": {
                     "text": true
                 },
-                "type": "datetime",
+                "type": "varchar(255)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "lastname",
+                "verbose": "lastname",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(255)",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
