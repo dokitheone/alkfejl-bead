@@ -16,11 +16,11 @@
           <select class="form-control" id="inputCategory" name="category">
             <option value="">--</option>
             {% for category in categories %}
-            {% if filters.category == category.id %}
-            <option value="{{ category.id }}" selected>{{ category.name }}</option>
-            {% else %}
-            <option value="{{ category.id }}">{{ category.name }}</option>
-            {% endif %}
+              {% if filters.category == category.id %}
+                <option value="{{ category.id }}" selected>{{ category.name }}</option>
+              {% else %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+              {% endif %}
             {% endfor %}
           </select>
         </div>
@@ -33,9 +33,10 @@
       </div>
     </div>
   </form>
-  <h2>Találatok</h2>  
-  {% for cardBatch in cards.data | batch(30) %}
+  <h2>Találatok ({{ cards.total }})</h2>
+  
     <table class="table table-striped table-hover ">    
+      {% for cardBatch in cards.data | batch(30) %} 
       <thead>
         <tr>
           <th>Név</th>
@@ -45,19 +46,18 @@
       </thead>        
       <tbody>
       {% for card in cardBatch %}
-        {% if (card.user_id == currentUser.id) %}
           <tr>            
             <td style='width: 400px'><a href="/cards/{{ card.id }}"><strong>{{ card.name }}</strong></a></td>            
             <td style='width: 400px'>  {{ card.cell }}</td>
             <td style='width: 400px'>  {{ card.email }}</td>
           </tr>
-        {% endif %}
       {% endfor %}
       </tbody>
     </table>
   {% else %}
      Nincs a szűrésnek megfelelő névjegy.
-  {% endfor %}    
+  {% endfor %}
+
   {% if cards.lastPage > 1 %}
     <div class="text-center">
       <ul class="pagination">

@@ -142,7 +142,7 @@ class CardController {
                 if (filters.cardName.length > 0) this.where('name', 'LIKE', `%${filters.cardName}%`)
             })
             .with('user')
-            .paginate(page, 9)
+            .paginate(page, 10)
 
         const categories = yield Category.all()
         const users = yield User.all()
