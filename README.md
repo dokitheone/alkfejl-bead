@@ -216,4 +216,30 @@ GitHub, Visual Studio Code
   + .env
   + package.json
   + server.js
-  + ...
+
+###4.	Tesztelés
+
+###5.	Felhasználói dokumentáció
+
+#####5.1.	A futtatáshoz ajánlott hardver-, szoftver konfiguráció
+
+**Futtatáshoz szükséges operációs rendszer:** Windows 10
+
+**A futtatáshoz szükséges hardver:** Operációs rendszerek szerint megadva
+
+**Egyéb követelmények:** Internet böngésző telepítése, JavaScript ajánlott
+
+#####5.2.	Telepítés lépései
+
+#####5.3.	A program használata
+
+1. Böngészőben nyissuk meg a főoldalt
+2. Bal felső sarokban kattintsunk a Belépés feliratra
+3. Belépés/Regisztráció után a jobb felső sarokban köszönt az oldal
+4. Bal felső sarokban a Névjegy létrehozása gombra kattintva tudunk új névjegyet létrehozni
+5. Töltsük ki az űrlapot
+6. Hibás adatok esetén az űrlap jelezni fogja a hibát
+7. Küldés gombra kattintva mentsük el az adatokat
+8. Névjegyek megtekintése oldalon: a hozzánk tartozó névjegyre kattintás után a Törlés gombra kattintva törölhetjük a névjegyet
+9. Névjegyek megtekintése oldalon: a hozzánk tartozó névjegyre kattintás után a Szerkeszt gombra kattintva szerkeszthetjük a névjegyet
+10. Szerkesztés oldal: hasonlít a névjegy létrehozás funkcióihoz, csak előre láthatóak benne a recept eddigi adatai illetve még több precizitást igényel
