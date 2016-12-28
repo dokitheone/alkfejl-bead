@@ -219,6 +219,35 @@ GitHub, Visual Studio Code
 
 ###4.	Tesztelés
 
+Selenium IDE
+
+A teszteléshez szükséges tesztesetek a tests mappában találhatóak.
+
+A 'nevjegy' test-suite futtatásához szükséges lépések:
+
+1. Mozzila Firefox indítása
+2. Selenium IDE letöltése
+3. JavaScript kikapcsolása!! (F12/Settings)
+4. localhost:3333 megnyitása
+
+(A biztos működés érdekében a slidert Fast-ről Slow-ra állítsuk)
+A 'nevjegy' test-suite tesztelése:
+
+1. Play entire test suite gombra kattintás
+
+Amit tesztelni fog:
+
+1. 'test' regisztrálása
+2. új próba névjegy létrehozása
+3. névjegyek megtekintése oldal használatba vétele (szűkítés)
+4. létrehozott próba névjegy szerkesztése
+5. Kijelentkezés
+6. bejelentkezés a 'test' felhasználóval
+7. egy újabb próba névjegy létrehozása
+8. névjegyek megtekintése oldal újboli használatba vétele (szűkítés)
+9. újonnan létrehozott próba névjegy szerkesztése
+10. a két létrehozott névjegy listában való megjelenítése
+
 ###5.	Felhasználói dokumentáció
 
 #####5.1.	A futtatáshoz ajánlott hardver-, szoftver konfiguráció
