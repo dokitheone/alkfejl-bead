@@ -248,9 +248,23 @@ Amit tesztelni fog:
 9. újonnan létrehozott próba névjegy szerkesztése
 10. a két létrehozott névjegy listában való megjelenítése
 
-###5.	Felhasználói dokumentáció
+###5. Progresszív fejlesztés (js)
 
-#####5.1.	A futtatáshoz ajánlott hardver-, szoftver konfiguráció
+**Új funkciók:**
+
++ pop_del.js: felugró ablak törlés megerősítéséhez
++ pop_reg.js: felugró ablak regisztrációhoz
++ pop_log.js: felugró ablak bejelentkezéshez
++ névjegy létrehozás: adatok ellenőrzése
++ névjegy szerkesztése: 
+  + edit.js: vezeték-, keresztnév megadás kötelező
+  + még pontosabb adat ellenőrzése
+    + telefonszám: 11 db szám
+    + email: @-t kell tartalmaznia
+
+###6.	Felhasználói dokumentáció
+
+#####6.1.	A futtatáshoz ajánlott hardver-, szoftver konfiguráció
 
 **Futtatáshoz szükséges operációs rendszer:** Windows 10
 
@@ -258,7 +272,7 @@ Amit tesztelni fog:
 
 **Egyéb követelmények:** Internet böngésző telepítése, JavaScript ajánlott
 
-#####5.2.	Telepítés lépései
+#####6.2.	Telepítés lépései
 
 1. Kód letöltése
 
@@ -285,7 +299,7 @@ Amit tesztelni fog:
 
     c. username és password beállítása
 
-#####5.3.	A program használata
+#####6.3.	A program használata
 
 1. Böngészőben nyissuk meg a főoldalt
 2. Bal felső sarokban kattintsunk a Belépés feliratra
