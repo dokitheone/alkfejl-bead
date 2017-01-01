@@ -270,7 +270,7 @@ Amit tesztelni fog:
 
 **A futtatáshoz szükséges hardver:** Operációs rendszerek szerint megadva
 
-**Egyéb követelmények:** Internet böngésző telepítése, JavaScript ajánlott
+**Egyéb követelmények:** Mozilla Firefox telepítése, JavaScript ajánlott
 
 #####6.2.	Telepítés lépései
 
